@@ -456,7 +456,7 @@ tag-prefix: custom-tag-prefix-from-yml";
         SetupConfigFileContent(text);
         var config = this.configProvider.Provide(this.repoPath);
 
-        config.TagPrefix.ShouldBe("[vV]");
+        config.TagPrefix.ShouldBe(Config.DefaultTagPrefix);
     }
 
     [Test]
@@ -486,7 +486,7 @@ tag-prefix: custom-tag-prefix-from-yml";
         SetupConfigFileContent(text);
         var config = this.configProvider.Provide(this.repoPath, new Config { TagPrefix = null });
 
-        config.TagPrefix.ShouldBe("[vV]");
+        config.TagPrefix.ShouldBe(Config.DefaultTagPrefix);
     }
 
     [Test]
